@@ -51,5 +51,12 @@ button{
 
 button:hover{
     opacity: .7;
+}
 
+.error{
+    background: #F2DEDE;
+    color: #b65959;
+    padding: 10px;
+    border-radius: 5px;
+    width: 95%;
 }
