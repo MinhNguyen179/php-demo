@@ -1,5 +1,5 @@
 <?php
-
+include "dbconn.php";
 if (isset($_POST['uname'])&&isset($_POST['password'])){
     function validate($data){
         $data = trim($data);
@@ -16,7 +16,8 @@ if (isset($_POST['uname'])&&isset($_POST['password'])){
         header("Location:index.php?error=Password is required!");
         exit();
     }else{
-        echo "Valid input";
+        $mysql = "SELECT * FROM users WHERE user_name = '$uname' AND password = '$pass'";
+        $result = $conn -> query($mysql);
     }
 }else{
     header("Location:index.php");

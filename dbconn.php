@@ -1,4 +1,5 @@
 <?php
+global $conn;
 $user_name = "root";
 $password = "Muaxuan179";
 $database = "php-todo";
@@ -12,8 +13,8 @@ if ($conn->connect_error) {
 }
 
 // Query to get all table names
-$query = "SHOW TABLES";
-$result = $conn->query($query);
+//$query = "SHOW TABLES";
+//$result = $conn->query($query);
 
 // Fetch table names
 //if ($result->num_rows > 0) {
