@@ -17,25 +17,24 @@ if (isset($_POST['uname'])&&isset($_POST['password'])){
         header("Location:index.php?error=Password is required!");
         exit();
     }else{
-//        $mysql = "SELECT * FROM users WHERE user_name = '$uname' AND password = '$pass'";
-//        $result = $conn -> query($mysql);
-//        if (mysqli_num_rows($result) == 1){
-//            $row = mysqli_fetch_assoc($result);
-//            if($row['user_name'] ===$uname && $row['password'] ===$pass) {
-//                $_SESSION['user_name'] = $row['user_name'];
-//                $_SESSION['name'] = $row['name'];
-//                $_SESSION['id'] = $row['id'];
-//                header("Location: home.php");
-//                exit();
-//            }else{
-//                header("Location: index.php?error=Incorrect username or password");
-//                exit();
-//            }
-//        }else{
-//            header("Location: index.php?error=Incorrect username or password");
-//            exit();
-//        }
-        echo "minh";
+        $mysql = "SELECT * FROM users WHERE user_name = '$uname' AND password = '$pass'";
+        $result = $conn -> query($mysql);
+        if (mysqli_num_rows($result) == 1){
+            $row = mysqli_fetch_assoc($result);
+            if($row['user_name'] ===$uname && $row['password'] ===$pass) {
+                $_SESSION['user_name'] = $row['user_name'];
+                $_SESSION['name'] = $row['name'];
+                $_SESSION['id'] = $row['id'];
+                header("Location: home.php");
+                exit();
+            }else{
+                header("Location: index.php?error=Incorrect username or password");
+                exit();
+            }
+        }else{
+            header("Location: index.php?error=Incorrect username or password");
+            exit();
+        }
     }
 }else{
     header("Location:index.php");
