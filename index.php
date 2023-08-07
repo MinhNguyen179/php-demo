@@ -16,13 +16,13 @@ $query = "SHOW TABLES";
 $result = $conn->query($query);
 
 // Fetch table names
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_row()) {
-        echo "Table: " . $row[0] . "<br>";
-    }
-} else {
-    echo "0 tables found";
-}
+//if ($result->num_rows > 0) {
+//    while($row = $result->fetch_row()) {
+//        echo "Table: " . $row[0] . "<br>";
+//    }
+//} else {
+//    echo "0 tables found";
+//}
 
 //// Close connection
 //$conn->close();
