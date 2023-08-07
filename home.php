@@ -1,7 +1,7 @@
 <?php
-session_start();
-if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
-?>
+//session_start();
+//if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
+//?>
 
 <!doctype html>
 <html lang="en">
@@ -14,14 +14,15 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
     <title>HOME</title>
 </head>
 <body>
-    <h1>Hello <?php echo $_SESSION['name'] ?></h1>
+<!--    <h1>Hello --><?php //echo $_SESSION['name'] ?><!--</h1>-->
+    <div> This is your to do list, click here to check </div>
     <a href="logout.php">Logout</a>
 </body>
 </html>
 <?php
-}else{
-    header("Location: index.php");
-    exit();
-}
-?>
+//}else{
+//    header("Location: index.php");
+//    exit();
+//}
+//?>
 
