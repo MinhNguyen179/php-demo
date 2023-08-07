@@ -24,8 +24,8 @@ if ($result->num_rows > 0) {
     echo "0 tables found";
 }
 
-// Close connection
-$conn->close();
+//// Close connection
+//$conn->close();
 ?>
 <!doctype html>
 <html lang="en">
@@ -34,14 +34,17 @@ $conn->close();
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel ="stylesheet" href ="style.css" type = "text/css">
     <title>Todo Apps</title>
 </head>
 <body>
-    <form class = "center">
-        <h1>login</h1>
+    <form>
+        <h2>login</h2>
+        <label>User Name</label>
+        <input type = "text" name  ="uname" placeholder="Username...">
+        <label>Password</label>
+        <input type = "password" name  ="uname" placeholder="Password...">
+        <button type="submit">Submit</button>
     </form>
-    <div>
-
-    </div>
 </body>
 </html>
