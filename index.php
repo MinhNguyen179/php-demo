@@ -38,10 +38,10 @@ $result = $conn->query($query);
     <title>Todo Apps</title>
 </head>
 <body>
-    <form>
+    <form action="login.php" method = "POST">
         <h2>login</h2>
         <label>User Name</label>
-        <input type = "text" name  ="uname" placeholder="Username...">
+        <input type = "text" name = "uname" placeholder="Username...">
         <label>Password</label>
         <input type = "password" name  ="uname" placeholder="Password...">
         <button type="submit">Submit</button>
