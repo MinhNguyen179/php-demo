@@ -43,7 +43,7 @@ $result = $conn->query($query);
         <label>User Name</label>
         <input type = "text" name = "uname" placeholder="Username...">
         <label>Password</label>
-        <input type = "password" name  ="uname" placeholder="Password...">
+        <input type = "password" name = "password" placeholder="Password...">
         <button type="submit">Submit</button>
     </form>
 </body>
