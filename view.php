@@ -1,7 +1,7 @@
 <?php
 session_start();
-$des = $_GET['description'];
-$id = $_GET['id'];
+$description = $_GET['description'];
+$taskId = $_GET['id'];
 if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
     ?>
     <!DOCTYPE html>
@@ -21,15 +21,15 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                     <div class = "card-body">
                         <ul class = "list-group">
                             <li class = "list-group-item flex">
-                                <?php echo "minh dep trai vcl con day la noi dung: $des" ?>
+                                <?php echo $description ?>
                                 <tr>
                                     <td>
-                                        <a href ="edit.php?id = <?php echo $id ?>" style="color:white" class="btn btn-info btn float-right">
+                                        <a href="edit.php?id=<?php echo $taskId ?>" style="color:white" class="btn btn-info btn float-right">
                                             Edit
                                         </a>
                                     </td>
                                     <td>
-                                        <a href ="" style="color:white" class="btn btn-danger float-right">
+                                        <a href ="delete.php?id=<?php echo $taskId ?>" style="color:white" class="btn btn-danger float-right">
                                             Delete
                                         </a>
                                     </td>

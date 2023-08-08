@@ -1,7 +1,7 @@
 <?php
 include "dbconn.php";
 session_start();
-$taskId= $_SESSION['task_id'];
+$taskId= $_GET['id'];
 $data = $conn ->query(" SELECT * FROM todos WHERE id = $taskId");
 $data = $data->fetch_array(MYSQLI_ASSOC);
 if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
@@ -17,13 +17,13 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
     <div class="container">
         <h2 class = "text-center my-5">THIS IS YOUR TODO LIST!!</h2>
         <div class = "row justify-content-center">
-            <div class = "col-md-10">
+            <div class = "col-md-5.5">
                 <div class ="card card-default">
                     <div class = "card-header">Update the status of your task!</div>
-                    <div class = "card-body">
-                        <ul class = "list-group">
-                            <li class = "list-group-item flex">
-                                <tr>
+<!--                    <div class = "card-body">-->
+<!--                        <ul class = "list-group">-->
+<!--                            <li class = "list-group-item flex">-->
+<!--                                <tr>-->
                                     <form action="update.php" method="POST">
                                         <div class="form-group">
                                             <input name="title" placeholder="Title" id="" class="form-control" value = "<?php echo $data['title']?>" >
@@ -35,17 +35,14 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                                         <div class="form-group text-center">
                                             <button type="submit" class="btn btn-success"> Finish Update</button>
                                         </div>
-                                    </form>
-                                        <a href ="" style="color:white" class="btn btn-danger float-right mr-3">
-                                            Delete
-                                        </a>
                                         <a href ="view.php?id=<?php echo $data['id']?>&description=<?php echo $data['description']?>" style="color:white" class="btn btn-primary float-right mr-3">
                                             Back
                                         </a>
-                                </tr>
-                            </li>
-                        </ul>
-                    </div>
+                                    </form>
+<!--                                </tr>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
                 </div>
             </div>
         </div>

@@ -12,13 +12,13 @@ $user = $_SESSION['id'];
 //Positioning
 $start = ($page > 1) ? ($page * $perPage) - $perPage : 0;
 //Query
-$todolist = $db->prepare("
+$todoList = $db->prepare("
         SELECT SQL_CALC_FOUND_ROWS title, id, description, completed, user_id
         FROM todos WHERE user_id  = {$user}
         LIMIT {$start}, {$perPage}
     ");
-$todolist->execute();
-$todolist = $todolist->fetchAll(PDO::FETCH_ASSOC);
+$todoList->execute();
+$todoList = $todoList->fetchAll(PDO::FETCH_ASSOC);
 
 //Pages
 
@@ -44,7 +44,7 @@ $pages = ceil($total/$perPage);
                         <ul class = "list-group">
 
                             <?php
-                            foreach($todolist as $todo){?>
+                            foreach($todoList as $todo){?>
                             <li class = "list-group-item flex">
                                 <?php echo $todo['title'];?>
                                 <?php if(!$todo['completed']) {?>
@@ -57,7 +57,6 @@ $pages = ceil($total/$perPage);
                                 <?php } ?>
                                     <td>
                                         <a href ="view.php?id=<?php echo $todo['id']?>&description=<?php echo $todo['description']?>" class="btn btn-primary btn float-right mr-2">
-                                            <?php $_SESSION['task_id'] = $todo['id'] ?>
                                             View
                                         </a>
                                     </td>
