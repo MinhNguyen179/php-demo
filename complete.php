@@ -1,16 +1,11 @@
 <?php
-$user_name = "root";
-$password = "Muaxuan179";
-$database = "php-todo";
-$host_name = "localhost";
-
-$conn = new mysqli($host_name, $user_name, $password, $database);
+include "dbconn.php";
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 $sql = "";
-//echo $id = $_GET['ID'];
+//echo $id = $_GET['ID']; // check if id is taken or not
 if (isset($_GET['ID'])) { // id cua task
     $id = (int)$_GET['ID']; //lay ra id cua task
     $sql = "UPDATE todos SET completed = 1 WHERE id = $id";//update task ma co id = $id
