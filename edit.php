@@ -24,11 +24,11 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                         <ul class = "list-group">
                             <li class = "list-group-item flex">
                                 <tr>
-                                    <input type="hidden" name="todo_id" value="$taskId">
                                     <form action="update.php" method="POST">
                                         <div class="form-group">
                                             <input name="title" placeholder="Title" id="" class="form-control" value = "<?php echo $data['title']?>" >
                                         </div>
+                                        <input type="hidden" name="id" value="<?php echo $data['id']?>">
                                         <div class="form-group">
                                             <textarea name="description" placeholder="Description" id="" cols="90" rows="10" class="form-control"><?php echo $data['description']?></textarea>
                                         </div>
