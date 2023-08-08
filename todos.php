@@ -25,10 +25,9 @@ $todolist = $todolist->fetchAll(PDO::FETCH_ASSOC);
 $total = $db -> query("SELECT FOUND_ROWS() as total")->fetch()['total'];
 $pages = ceil($total/$perPage);
 
-?>
-<div class="container">
+?><div class="container">
     <form>
-        <h1 class = "text-center my-5">THIS IS YOUR TODO LIST!!</h1>
+        <h2 class = "text-center my-5">THIS IS YOUR TODO LIST!!</h2>
         <div class = "row justify-content-center">
             <div class = "col-md-10">
                 <div class ="card card-default">
@@ -41,10 +40,10 @@ $pages = ceil($total/$perPage);
                                 echo $todo['title'];
 
                                 if (!$todo['completed']) {
-                                    echo '<a href="/todos/' . $todo['id'] . '/complete" style="color:white" class="btn btn-warning btn float-right">Complete</a>';
+                                    echo '<a href="/todos.php/' . $todo['id'] . '/complete.php" style="color:black" class="btn btn-warning btn float-right">Complete</a>';
                                 }
 
-                                echo '<a href="/todos/' . $todo['id'] . '/minh" class="btn btn-primary btn float-right mr-2">View</a>';
+                                echo '<a href="/todos.php/' . $todo['id'] . '/complete.php" class="btn btn-primary btn float-right mr-2">View</a>';
                                 echo '</li>';
                             }
                             ?>

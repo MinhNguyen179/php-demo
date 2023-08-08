@@ -1,7 +1,11 @@
 <?php
-global $conn;
-include "db_conn.php";
-
+session_start();
+$user_name = "root";
+$password = "Muaxuan179";
+$database = "php-todo";
+$host_name = "localhost";
+// Create connection
+$conn = new mysqli($host_name, $user_name, $password, $database);
 if (isset($_POST['uname']) && isset($_POST['password'])
     && isset($_POST['name']) && isset($_POST['re_password'])) {
 
@@ -44,7 +48,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])
     }
 
     else{
-//        $pass = md5($pass);
+        $pass = md5($pass);
 
         $sql = "SELECT * FROM users WHERE user_name='$uname' ";
         $result = mysqli_query($conn, $sql);
@@ -56,7 +60,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])
             $sql2 = "INSERT INTO users(user_name, password, name) VALUES('$uname', '$pass', '$name')";
             $result2 = mysqli_query($conn, $sql2);
             if ($result2) {
-                header("Location: signup.php?success=Your account has been created successfully");
+                header("Location: home.php?success=Your account has been created successfully");
                 exit();
             }else {
                 header("Location: signup.php?error=unknown error occurred&$user_data");
