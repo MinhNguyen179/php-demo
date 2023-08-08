@@ -22,7 +22,7 @@
     <title>Todo Apps</title>
 </head>
 <body>
-    <form action="login.php" method = "POST">
+    <form2 action="login.php" method = "POST">
         <h1><strong>Welcome to Todo List App</strong></h1>
         <p  style="text-align: center; margin-top: 30px"><i>"Manage your tasks efficiently and never miss a deadline."</i></p>
         <div>
@@ -37,6 +37,6 @@
         <input type = "password" name = "password" placeholder="Password...">
         <button type="submit" class = "submit-button" >Submit</button>
         <a href="signup.php" class="submit-button">Create an account</a>
-    </form>
+    </form2>
 </body>
 </html>
