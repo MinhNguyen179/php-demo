@@ -41,6 +41,13 @@ label{
 }
 
 button{
+    /*float:right;*/
+    /*background: #555;*/
+    /*padding: 10px 15px;*/
+    /*color: #fff;*/
+    /*border-radius: 5px;*/
+    /*margin-right: 10px;*/
+    /*border:none;*/
     float:right;
     background: #555;
     padding: 10px 15px;
@@ -48,6 +55,7 @@ button{
     border-radius: 5px;
     margin-right: 10px;
     border:none;
+    text-decoration: none;
 }
 
 button:hover{
@@ -56,7 +64,7 @@ button:hover{
 
 .error{
     background: #F2DEDE;
-    color: #b65959;
+    color: #100f0f;
     padding: 10px;
     border-radius: 5px;
     width: 95%;
@@ -64,7 +72,7 @@ button:hover{
 
 h1{
     text-align: center;
-    color:#fff;
+    color:#100F0FFF;
 }
 
 a{
@@ -78,6 +86,31 @@ a{
     text-decoration: none;
 }
 
-a:hover{
+.ca {
+    font-size: 14px;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: #444;
+}
+.ca:hover {
+    text-decoration: underline;
+}
 
+.submit-button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline block */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.submit-button:hover {
+    background-color: #45a049; /* Darker green on hover */
 }
