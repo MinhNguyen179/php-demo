@@ -18,10 +18,10 @@ if (isset($_POST['uname'])&&isset($_POST['password'])){
         exit();
     }else{
 //        $pass = md5($pass);
-        $mysql = "SELECT * FROM users WHERE user_name = '$uname' AND password = '$pass'";
-        $result = $conn -> query($mysql);
-        if (mysqli_num_rows($result) == 1){
-            $row = mysqli_fetch_assoc($result);
+        $userQuery = "SELECT * FROM users WHERE user_name = '$uname' AND password = '$pass'";
+        $userResult = $conn -> query($userQuery);
+        if (mysqli_num_rows($userResult) == 1){
+            $row = mysqli_fetch_assoc($userResult);
             if($row['user_name'] ===$uname && $row['password'] ===$pass) {
                 $_SESSION['user_name'] = $row['user_name'];
                 $_SESSION['name'] = $row['name'];

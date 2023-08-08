@@ -56,7 +56,8 @@ $pages = ceil($total/$perPage);
                                     </td>
                                 <?php } ?>
                                     <td>
-                                        <a href ="view.php? ID=<?php echo $todo['id'] ?>" class="btn btn-primary btn float-right mr-2">
+                                        <a href ="view.php?id=<?php echo $todo['id']?>&description=<?php echo $todo['description']?>" class="btn btn-primary btn float-right mr-2">
+                                            <?php $_SESSION['task_id'] = $todo['id'] ?>
                                             View
                                         </a>
                                     </td>

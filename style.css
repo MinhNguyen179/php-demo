@@ -120,12 +120,3 @@ h1{
     display: flex;
     justify-content: space-between;
 }
-
-.complete-btn, .view-btn {
-    color: black;
-    text-decoration: none;
-}
-
-.complete-btn {
-    margin-right: 10px; /* Adjust as needed */
-}
