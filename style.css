@@ -75,16 +75,16 @@ h1{
     color:#100F0FFF;
 }
 
-a{
-    float:right;
-    background: #555;
-    padding: 10px 15px;
-    color: #fff;
-    border-radius: 5px;
-    margin-right: 10px;
-    border:none;
-    text-decoration: none;
-}
+/*a{*/
+/*    float:right;*/
+/*    background: #555;*/
+/*    padding: 10px 15px;*/
+/*    color: #fff;*/
+/*    border-radius: 5px;*/
+/*    margin-right: 10px;*/
+/*    border:none;*/
+/*    text-decoration: none;*/
+/*}*/
 
 .ca {
     font-size: 14px;

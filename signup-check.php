@@ -1,5 +1,5 @@
 <?php
-session_start();
+global $conn;
 include "db_conn.php";
 
 if (isset($_POST['uname']) && isset($_POST['password'])
@@ -44,9 +44,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])
     }
 
     else{
-
-        // hashing the password
-        $pass = md5($pass);
+//        $pass = md5($pass);
 
         $sql = "SELECT * FROM users WHERE user_name='$uname' ";
         $result = mysqli_query($conn, $sql);
@@ -66,7 +64,6 @@ if (isset($_POST['uname']) && isset($_POST['password'])
             }
         }
     }
-
 }else{
     header("Location: signup.php");
     exit();
