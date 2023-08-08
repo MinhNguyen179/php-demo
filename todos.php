@@ -50,13 +50,13 @@ $pages = ceil($total/$perPage);
                                 <?php if(!$todo['completed']) {?>
                                 <tr>
                                     <td>
-                                        <a href ="complete.php? ID= <?php echo $todo['id'] ?>" style="color:white" class="btn btn-warning btn float-right">
+                                        <a href ="complete.php? ID=<?php echo $todo['id'] ?>" style="color:white" class="btn btn-warning btn float-right">
                                             Complete
                                         </a>
                                     </td>
                                 <?php } ?>
                                     <td>
-                                        <a href ="/todos/{{$todo['id']}}" class="btn btn-primary btn float-right mr-2">
+                                        <a href ="view.php? ID=<?php echo $todo['id'] ?>" class="btn btn-primary btn float-right mr-2">
                                             View
                                         </a>
                                     </td>
