@@ -8,13 +8,13 @@ $page = isset($_GET['page']) ? (int)$_GET['page'] :1;
 $perPage = isset($_GET['page']) && $_GET['per-page'] <= 50 ? (int)$_GET['per-page']:5;
 // Get the current page number from the URL parameter
 $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-
+$user = $_SESSION['id'];
 //Positioning
 $start = ($page > 1) ? ($page * $perPage) - $perPage : 0;
 //Query
 $todolist = $db->prepare("
         SELECT SQL_CALC_FOUND_ROWS title, id, description, completed
-        FROM todos
+        FROM todos WHERE user_id  = {$user}
         LIMIT {$start}, {$perPage}
     ");
 $todolist->execute();
@@ -36,7 +36,7 @@ $pages = ceil($total/$perPage);
 <body>
 <form action="todos.php" method="post">
     <div class="container">
-        <form>
+        <form action = "complete.php" method="post">
             <h2 class = "text-center my-5">THIS IS YOUR TODO LIST!!</h2>
             <div class = "row justify-content-center">
                 <div class = "col-md-10">
@@ -50,7 +50,7 @@ $pages = ceil($total/$perPage);
                                     echo $todo['title'];
                                     echo '<div class="action-links">';
                                     if (!$todo['completed']) {
-                                        echo '<a href="/todos.php/' . $todo['id'] . '/complete.php" class="complete-btn btn btn-warning btn float-right">Complete</a>';
+                                        echo '<a href="complete.php" class="complete-btn btn btn-warning btn float-right">Complete</a>';
                                     }
                                     echo '<a href="/todos.php/' . $todo['id'] . '/complete.php" class="view-btn btn-primary btn float-right mr-2">View</a>';
                                     echo '</div>';
