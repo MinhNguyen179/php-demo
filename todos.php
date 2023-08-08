@@ -52,7 +52,7 @@ $pages = ceil($total/$perPage);
                                     if (!$todo['completed']) {
                                         echo '<a href="complete.php" class="complete-btn btn-warning btn float-right">Complete</a>';
                                     }
-                                    echo '<a href="/todos.php/' . $todo['id'] . '/complete.php" class="view-btn btn-primary btn float-right mr-2">View</a>';
+                                    echo '<a href="view.php/'.$todo['id'].'" class="view-btn btn-primary btn float-right mr-2">View</a>';
                                     echo '</div>';
                                     echo '</li>';
                                 }

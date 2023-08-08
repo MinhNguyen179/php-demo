@@ -1,3 +1,16 @@
+<?php
+//$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+//
+//$routes = [
+//        '/' => 'controllers/home.php',
+//        '/login' => 'controllers/login.php',
+//        '/logout' => 'controllers/logout.php',
+//        '/signup' => 'controllers/signup.php',
+//];
+//if (array_key_exists($uri,$routes)){
+//    require $routes[$uri];
+//}
+//?>
 <!doctype html>
 <html lang="en">
 <head>

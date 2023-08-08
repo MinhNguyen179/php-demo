@@ -13,13 +13,13 @@ if ($conn->connect_error) {
 
 if (isset($_GET['id'])) {
     $id = (int)$_GET['id'];
-    $statement = $conn->prepare("UPDATE todos SET completed = 1 WHERE id = ? AND user_id = ?");
-    $statement->bind_param("ii", $id, $user_id); // Bind the todo ID and user ID as integers
-    $statement->execute();
-    $statement->close();
+    $user_id = (int)$_GET['user_id'];
+    $sql = "UPDATE todos SET completed = 1 WHERE id = $user_id";
+    $result2 = mysqli_query($conn, $sql);
+    header("Location: todos.php?success=You have completed successfully");
+    exit();
 }
-
-header("Location: /todos.php"); // Redirect back to the todo list
+header("Location: /todos.php");
 exit();
 
 ?>
