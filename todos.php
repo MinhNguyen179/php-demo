@@ -13,7 +13,7 @@ $user = $_SESSION['id'];
 $start = ($page > 1) ? ($page * $perPage) - $perPage : 0;
 //Query
 $todolist = $db->prepare("
-        SELECT SQL_CALC_FOUND_ROWS title, id, description, completed
+        SELECT SQL_CALC_FOUND_ROWS title, id, description, completed, user_id
         FROM todos WHERE user_id  = {$user}
         LIMIT {$start}, {$perPage}
     ");
@@ -34,35 +34,42 @@ $pages = ceil($total/$perPage);
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-<form action="todos.php" method="post">
     <div class="container">
-        <form action = "complete.php" method="post">
-            <h2 class = "text-center my-5">THIS IS YOUR TODO LIST!!</h2>
-            <div class = "row justify-content-center">
-                <div class = "col-md-10">
-                    <div class ="card card-default">
-                        <div class = "card-header">Todo list</div>
-                        <div class = "card-body">
-                            <ul class="list-group">
-                                <?php
-                                foreach ($todolist as $todo) {
-                                    echo '<li class="list-group-item d-flex justify-content-between">';
-                                    echo $todo['title'];
-                                    echo '<div class="action-links">';
-                                    if (!$todo['completed']) {
-                                        echo '<a href="complete.php" class="complete-btn btn-warning btn float-right">Complete</a>';
-                                    }
-                                    echo '<a href="view.php/'.$todo['id'].'" class="view-btn btn-primary btn float-right mr-2">View</a>';
-                                    echo '</div>';
-                                    echo '</li>';
-                                }
-                                ?>
-                            </ul>
-                        </div>
+        <h2 class = "text-center my-5">THIS IS YOUR TODO LIST!!</h2>
+        <div class = "row justify-content-center">
+            <div class = "col-md-10">
+                <div class ="card card-default">
+                    <div class = "card-header">Todo list</div>
+                    <div class = "card-body">
+                        <ul class = "list-group">
+
+                            <?php
+                            foreach($todolist as $todo){?>
+                            <li class = "list-group-item flex">
+                                <?php echo $todo['title'];?>
+                                <?php if(!$todo['completed']) {?>
+                                <tr>
+                                    <td>
+                                        <a href ="complete.php? ID= <?php echo $todo['id'] ?>" style="color:white" class="btn btn-warning btn float-right">
+                                            Complete
+                                        </a>
+                                    </td>
+                                <?php } ?>
+                                    <td>
+                                        <a href ="/todos/{{$todo['id']}}" class="btn btn-primary btn float-right mr-2">
+                                            View
+                                        </a>
+                                    </td>
+                                </tr>
+                            </li>
+                            <?php } ?>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
+
+
         <div class="row justify-content-center my-3">
             <div class="pagination">
                 <?php
@@ -91,7 +98,6 @@ $pages = ceil($total/$perPage);
             </div>
         </div>
     </div>
-</form>
 </body>
 </html>
 <?php
