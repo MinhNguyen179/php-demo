@@ -50,14 +50,26 @@ $pages = ceil($total/$perPage);
                                 <?php echo $todo['title'];?>
                                 <?php if(!$todo['completed']) {?>
                                 <tr>
+<!--                                    <td>-->
+<!--                                        <a href ="complete.php? ID=--><?php //echo $todo['id'] ?><!--" style="color:white" class="btn btn-warning btn float-right">-->
+<!--                                            Complete-->
+<!--                                        </a>-->
+<!--                                    </td>-->
+                                    <?php
+                                    $currentPage = isset($_GET['page']) ? $_GET['page'] : 1; // Get the current page number
+                                    ?>
+
                                     <td>
-                                        <a href ="complete.php? ID=<?php echo $todo['id'] ?>" style="color:white" class="btn btn-warning btn float-right">
+                                        <a href="/complete.php?ID=<?php echo $todo['id']; ?>&page=<?php echo $currentPage; ?>" class="btn btn-warning btn float-right mr-2" style="color:white">
                                             Complete
                                         </a>
                                     </td>
                                 <?php } ?>
+                                    <?php
+                                    $baseUrl = 'http://127.0.0.1:8000';
+                                    ?>
                                     <td>
-                                        <a href ="view.php?id=<?php echo $todo['id']?>&description=<?php echo $todo['description']?>" class="btn btn-primary btn float-right mr-2">
+                                        <a href="<?php echo $baseUrl; ?>/view.php?id=<?php echo $todo['id']?>&description=<?php echo $todo['description']?>" class="btn btn-primary btn float-right mr-2">
                                             View
                                         </a>
                                     </td>
