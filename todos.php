@@ -36,7 +36,11 @@ $pages = ceil($total/$perPage);
 <body>
     <div class="container">
         <h2 class = "text-center my-5">THIS IS YOUR TODO LIST!!</h2>
-
+        <div class="d-flex justify-content-center mb-3">
+            <a href="/insert.php" class="btn btn-primary">
+                Create new task!
+            </a>
+        </div>
         <div class = "row justify-content-center">
             <div class = "col-md-10">
                 <div class ="card card-default">
