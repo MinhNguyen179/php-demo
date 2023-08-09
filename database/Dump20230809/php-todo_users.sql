@@ -38,7 +38,7 @@ CREATE TABLE `users` (
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` VALUES (1,'Nhat Minh Nguyen','Nhat Minh','your_encrypted_password_1'),
-(2,'Huong Khuc','Khuc Thi Huong','your_encrypted_password_2'),
+(2,'Admin','Minh Nguyen','your_encrypted_password_2'),
 (3,'Test User','Test User','your_encrypted_password_1'),
 (4,'testuser2','Test User2','5065eb572e5baafac9c0ade071c9261a'),
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
