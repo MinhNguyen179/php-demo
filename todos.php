@@ -36,6 +36,7 @@ $pages = ceil($total/$perPage);
 <body>
     <div class="container">
         <h2 class = "text-center my-5">THIS IS YOUR TODO LIST!!</h2>
+
         <div class = "row justify-content-center">
             <div class = "col-md-10">
                 <div class ="card card-default">
@@ -78,13 +79,16 @@ $pages = ceil($total/$perPage);
                 $startPage = max(1, $currentPage - $halfMaxVisiblePages);
                 $endPage = min($startPage + $maxVisiblePages - 1, $pages);
 
-                if ($startPage > 1) {
-                    echo '<span class="page-number"><a href="/todos.php/?page=1&per-page=' . $perPage . '"> << </a></span>';
-                    echo '<span class="page-number"><a href="/todos.php/?page=' . ($currentPage - 1) . '&per-page=' . $perPage . '"> ...</a></span>';
+                if ($currentPage > 1) {
+                    $previousPageLink = $currentPage === 2 ? "/home.php" : "/todos.php/?page=" . ($currentPage - 1) . "&per-page=" . $perPage;
+                    echo '<span class="page-number"><a href="' . $previousPageLink . '"> << </a></span>';
+                    if ($currentPage > 2) {
+                        echo '<span class="page-number"><a href="/todos.php/?page=' . ($currentPage - 1) . '&per-page=' . $perPage . '"> ...</a></span>';
+                    }
                 }
 
                 for ($x = $startPage; $x <= $endPage; $x++) {
-                    echo '<span class="page-number"><a href="/todos.php/?page=' . $x . '&per-page=' . $perPage . '">' .$x. '</a></span>';
+                    echo '<span class="page-number"><a href="/todos.php/?page=' . $x . '&per-page=' . $perPage . '">' . $x . '</a></span>';
                 }
 
                 if ($endPage < $pages) {
@@ -96,10 +100,10 @@ $pages = ceil($total/$perPage);
         </div>
 
         <div style="display: flex; justify-content: center;">
-            <a href="home.php" style="color:white" class="btn btn-primary">
+            <a href="<?php echo $currentPage == 1 ? '/home.php' : '/todos.php/?page=' . ($currentPage - 1) . '&per-page=' . $perPage; ?>" style="color:white" class="btn btn-primary">
                 Back
             </a>
-        </div>;
+        </div>
     </div>
 </body>
 </html>
