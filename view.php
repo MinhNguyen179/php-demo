@@ -33,8 +33,6 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                                             Delete
                                         </a>
                                     </td>
-<!--                                    <td>-->
-<!--                                    </td>-->
                                 </tr>
                             </li>
                         </ul>
@@ -43,6 +41,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                 <a href ="todos.php" style="color:white" class="btn btn-primary float-right mt-4">
                     Back
                 </a>
+
             </div>
         </div>
     </div>
