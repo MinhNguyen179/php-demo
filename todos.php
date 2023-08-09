@@ -68,8 +68,6 @@ $pages = ceil($total/$perPage);
                 </div>
             </div>
         </div>
-
-
         <div class="row justify-content-center my-3">
             <div class="pagination">
                 <?php
@@ -94,9 +92,14 @@ $pages = ceil($total/$perPage);
                     echo '<span class="page-number"><a href="/todos.php/?page=' . $pages . '&per-page=' . $perPage . '"> >> </a></span>';
                 }
                 ?>
-
             </div>
         </div>
+
+        <div style="display: flex; justify-content: center;">
+            <a href="home.php" style="color:white" class="btn btn-primary">
+                Back
+            </a>
+        </div>;
     </div>
 </body>
 </html>
