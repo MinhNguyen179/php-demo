@@ -17,7 +17,9 @@ if (isset($_POST['uname'])&&isset($_POST['password'])){
         header("Location:index.php?error=Password is required!");
         exit();
     }else{
-        $pass = md5($pass);
+//        $pass = md5($pass);
+        // I commented this line because some password is not encrypted already when created account,
+        // so if you want to create new user and user, just un comment the line above.
         $userQuery = "SELECT * FROM users WHERE user_name = '$uname' AND password = '$pass'";
         $userResult = $conn -> query($userQuery);
         if (mysqli_num_rows($userResult) == 1){
